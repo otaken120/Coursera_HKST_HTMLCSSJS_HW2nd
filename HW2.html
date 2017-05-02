@@ -23,7 +23,7 @@
         guess_input_text=prompt("I am thinking one of these colors: \n\n"+
                                 "blue,cyan,gold,gray,green,magenta,orange,red,white,yellow\n\n"+
                                 "What color am I thinking of?");
-        guess_input= String(guess_input_text)
+        guess_input= String(guess_input_text);
         guesses += 1;
         finished=check_guess();
 
@@ -32,20 +32,20 @@
       }
     }
     function check_guess() {
-      if(guess_input==-1){
+      if(guess_input>'yellow'||guess_input<'blue'){
         alert("Sorry, I don't recognize your color.\n"
               +"Please try again.")
         return false;
       }
       if(guess_input>target){
-        alert("Sorry, your guess is not correct!"+
-              "Hint: your color is alphabetically higher than mine."+
+        alert("Sorry, your guess is not correct!\n"+
+              "Hint: your color is alphabetically higher than mine\n."+
               "Please try again.")
         return false;
       }
       if(guess_input<target){
-        alert("Sorry, your guess is not correct!"+
-              "Hint: your color is alphabetically lower than mine."+
+        alert("Sorry, your guess is not correct!\n"+
+              "Hint: your color is alphabetically lower than mine.\n"+
               "Please try again.")
         return false;
       }
