@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Color Guessing Game</title>
+    <meta name="author" content="Ken Deng">
+    <script>
+    var target;
+    var guess_input_text;
+    var guess_input;
+    var finished = false;
+    var guesses = 0;
+    var color=["blue","cyan","gold","gray","green","magenta","orange","red","white","yellow"];//长10.
+
+
+    function do_game(){
+
+
+      var random_number = Math.random()* ((color.length)-1);//10-1=9,which means from color[0] to color[9]
+      var random_number_integer = Math.floor(random_number);
+      target=color[random_number_integer];
+      alert(target);
+      while (!finished) {
+        guess_input_text=prompt("I am thinking one of these colors: \n\n"+
+                                "blue,cyan,gold,gray,green,magenta,orange,red,white,yellow\n\n"+
+                                "What color am I thinking of?");
+        if (target != guess_input_text){
+        guesses += 1;
+        finished=check_guess();
+      }
+        else finished=true;
+
+      }
+    }
+
+    function check_guess() {
+      if(/*not a color in the array*/){
+
+        return false;
+      }
+      if(/*higher than the target*/){
+
+        return false;
+      }
+      if(/*lower than the target*/){
+
+        return false;
+      }
+      alert("Congratulations! You have guessed the color!"+
+            "It took you "+guesses+" guesses to finish the game!"+
+            "You can see the color in the background.");
+      return true;
+    }
+
+
+    </script>
+  </head>
+
+<body onload="do_game()">
+</body}
+</html>
